@@ -1,0 +1,304 @@
+@import url("font.css");
+
+:root{
+    --c-theme: #FEE9A1;
+    --c-theme-transparent:#fee9a17a;
+    --c-theme2: #FD70FD;
+    --c-bg-theme: #010101;
+    --c-white:white;
+    --c-scrollbar:#ffb6ffb5;
+    --c-bg-light:rgba(255, 255, 255, 0.1);
+}
+
+body{
+    background-color: var(--c-bg-theme);
+}
+.cursor-pointer{
+    cursor: pointer;
+    user-select: none;
+}
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.light_bg{
+    background-color: var(--c-bg-light);
+}
+.section-padding{
+    padding: 40px 0px;
+}
+.section-heading{
+    font-family: 'Bakbak_One';
+    color: var(--c-theme);
+    font-size: 50px;
+
+}
+.heading-half{
+    color: var(--c-theme2);
+}
+/* Nav bar styles  */
+.nav_list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav_list li{
+    color: var(--c-theme);
+    font-family: 'Ledger','sans-serif';
+}
+ul li a{
+    text-decoration: none;
+    color: inherit;
+}
+.nav_active{
+    font-size: 25px;
+    color: var(--c-theme2) !important;
+}
+
+/* Hero Section Styles */
+.hero{
+    width: 100%;
+    
+    padding-top: 12vh;
+    position: relative;
+}
+.hero_img img{
+    width: 100%;
+    height: auto;
+
+}
+.hero_text_container{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero_text{
+    position: relative;
+}
+.hero_text span{
+    position: absolute;
+}
+.reverb{
+    font-family: 'Arizonia';
+    color: var(--c-theme2);
+    font-size: 180px;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%);
+    
+}
+.nation{
+    font-family: 'Bakbak_One';
+    color: var(--c-theme);
+    font-size: 180px;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.echo{
+    position: absolute;
+
+    font-family: 'Audiowide';
+    color: var(--c-white);
+    font-size: 40px;
+    top: 240px;
+    left: 50%;
+    width: 500px;
+    transform: translate(-50%);
+}
+
+/* About section styles */
+.about_text{
+    font-family: 'Inter';
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 16px;
+    color: var(--c-white);
+}
+.highlight-gold ,.highlight-pink{
+    font-size: 28px;
+    font-style: italic;
+    font-weight: bold;
+}
+.highlight-gold{
+    color: var(--c-theme);
+}
+.highlight-pink{
+    color: var(--c-theme2);
+}
+
+/* Tour Section */
+.Tour-box-row{
+    background-color: var(--c-bg-light);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Tour-box{
+    height: 40vh;
+    position: relative;
+    overflow: auto;
+    width: 90%;
+}
+::-webkit-scrollbar{
+    height: 6px;
+    width: 6px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--c-scrollbar);
+    border-radius: 10px ;
+
+}
+
+.Tour-box .line{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    height: 1px;
+    background-color: var(--c-theme2);
+}
+.line::after{
+    content: "End";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -50px;
+    color: var(--c-theme2);
+    font-family: 'Bakbak_One';
+    font-size: 20px;
+}
+.place{
+    position: absolute;
+    top: 50%;
+/*     left: 50%;
+ */    transform: translateY(-50%);
+    background-color: var(--c-theme);
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    box-shadow: var(--c-theme) 0 0 7px 3px;
+
+}
+.place:nth-child(1){
+    left: 50%;
+}
+.place-detail{
+    position: relative;
+}
+.place-name{
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Arizonia';
+    font-size: 50px;
+    color: var(--c-theme2);
+}
+.details{
+    font-family: 'Bakbak_One';
+    font-size: 20px;
+    color: var(--c-theme);
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    text-wrap: nowrap;
+}
+/* Latest hit section */
+.song-div{
+    height: 380px;
+    width: 95%;
+    background-color: var(--c-bg-light);
+    border: 2px solid var(--c-theme);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+.song-details:hover{
+    opacity: 1;
+}
+.song-details{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all ease-in-out .3s;
+    opacity: 0;
+    background-color: var(--c-theme-transparent);
+    flex-direction: column;
+}
+.song-name{
+    font-weight: bold;
+    font-family: 'Ledger';
+    color: black;
+    margin-top: 10px;
+}
+
+/* Leader board Styles  */
+.record-row{
+    background-color: var(--c-bg-light);
+    border-radius: 30px;
+
+
+}
+.record-text{
+    font-family: 'Bakbak_One';
+    font-size: 55px;
+    color: var(--c-theme2);
+}
+.record-rank{
+    background-color: var(--c-theme);
+    font-family: 'Ledger';
+    font-size: 30px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    padding: 5px;
+}
+
+/* Footer Styles */
+.footer{
+    position: relative;
+    overflow: hidden;
+}
+.footer-img{
+    box-shadow: inset  var(--c-bg-theme) 0px 15px 50px 30px;
+
+    background: url(../Assets/Images/crowd-people-dancing-concert_946657-1033.jpg)  no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: block;
+    width: 100%;
+    height: 600px;
+}
+.footer-info-layer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+    width: 100%;
+    background-color: rgba(1, 1, 1, 0.64);
+}
+.copyright{
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--c-white);
+}

@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'Arizonia';
+    src: url('../Assets/Fonts/Arizonia/Arizonia-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Audiowide';
+    src: url('../Assets/Fonts/Audiowide/Audiowide-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Bakbak_One';
+    src: url('../Assets/Fonts/Bakbak_One/BakbakOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('../Assets/Fonts/Inter/Inter-Italic-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Ledger';
+    src: url('../Assets/Fonts/Ledger/Ledger-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.Arizonia {
+    font-family: 'Arizonia', sans-serif;
+}
+
+.Audiowide {
+    font-family: 'Audiowide', sans-serif;
+}
+
+.Bakbak_One {
+    font-family: 'Bakbak_One', sans-serif;
+}
+
+.Inter {
+    font-family: 'Inter', sans-serif;
+}
+
+.Ledger {
+    font-family: 'Ledger', sans-serif;
+}
