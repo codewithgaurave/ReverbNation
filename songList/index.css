@@ -1,0 +1,61 @@
+body {
+    background: linear-gradient(0deg, rgba(0,0,0,1) 64%, rgba(152,15,15,1) 100%);
+    background-repeat: no-repeat;
+    background-color: black;
+    color: white;
+}
+
+.play-icon {
+    padding: 20px;
+    border-radius: 50%;
+    background-color: #14d75f;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-icon i {
+    color: black;
+    font-size: 25px;
+}
+
+.follow-btn button {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 5px 12px;
+}
+
+.music-table {
+    width: 100%;
+}
+
+.img-thumb {
+    border-radius: 7px;
+}
+
+.play {
+    cursor: pointer;
+    color: #14d75f;
+}
+
+.music-table tr {
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.music-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.115);
+}
+
+.music-table tr:hover .index-col .index {
+    display: none;
+}
+
+.music-table tr:hover .index-col .play {
+    display: block;
+}

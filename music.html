@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music App</title>
+    <style>
+      @import url("font.css");
+      body {
+        margin: 0px;
+        padding: 0px;
+        font-family: "Lato", sans-serif;
+        font-weight: 100;
+        font-size: 16px;
+        color: #333;
+        text-align: center;
+        background: #eee;
+      }
+
+      header {
+        height: 50px;
+        width: 100%;
+        border-bottom: 2px solid black;
+        background-color: black;
+      }
+
+      .navBar {
+        display: flex;
+        justify-content: center;
+      }
+
+      .navBar img {
+        height: 50px;
+        width: 100px;
+        position: absolute;
+        left: 5px;
+      }
+
+      .navBar .btn {
+        position: absolute;
+        right: 10px;
+        padding: 9px;
+        background-color: #4caf50;
+        margin: 2px;
+        font-weight: bolder;
+        font-size: x-large;
+        border-radius: 10px;
+        color: aliceblue;
+      }
+
+      .des {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+        text-align: center;
+      }
+
+      .btn2 {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: rgb(0, 0, 0);
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: large;
+        font-weight: bold;
+      }
+
+      .btn2 a{
+        text-decoration: none;
+        color:#010101;
+      }
+
+      .songType {
+        height: 300px;
+        width: 100%;
+        display: flex;
+        margin-top: 10px;
+        margin-bottom:10px;
+      }
+
+      .songType .d1 {
+        width: 33%;
+        background-color: aqua;
+        margin-left: 20px;
+        margin-right: 20px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .songType #b1 {
+        background: url(https://images.saymedia-content.com/.image/t_share/MTczOTUwNDE0MDgzODU5NzYz/pop-rock-and-country-songs-about-music-songs-and-singing.jpg)
+          center center/cover;
+      }
+
+      .songType #b2 {
+        background: url(https://th.bing.com/th/id/OIP.7MRMoVKkean671aFHCXh6gHaFW?w=600&h=434&rs=1&pid=ImgDetMain)
+          center center/cover;
+      }
+
+      .songType #b3 {
+        background: url(https://stringjoy.com/wp-content/uploads/2016/10/IMG_5126-1024x683.png)
+          center center/cover;
+      }
+      .songType #b4 {
+        background: url(https://wallpapercave.com/wp/0l0kzYB.jpg)
+          center center/cover;
+      }
+
+      .songType #b5 {
+        background: url(https://img.freepik.com/premium-photo/neon-lights-headphone-abstract-glowing-background-digital-illustration-ai_985124-3504.jpg)
+          center center/cover;
+      }
+
+      .songType #b6 {
+        background: url(https://th.bing.com/th/id/R.e64055d7c786d2ac6eb5113bf10b2f4b?rik=YlDSQlnIEOE5Jw&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f05%2fBest-music-wallpaper-hd.jpg&ehk=3iPywrl8KzGA3PaAvix7zenXAtvCl%2b5Jh2pCBiZ6Gu4%3d&risl=&pid=ImgRaw&r=0)
+          center center/cover;
+      }
+
+      .songType #b7 {
+        background: url(https://thumbs.dreamstime.com/b/gold-music-notes-neon-lines-wavy-line-made-metallic-symbols-glowing-octave-d-render-261146429.jpg)
+          center center/cover;
+      }
+
+      .songType #b8 {
+        background: url(https://wallpapercave.com/wp/wp8130764.jpg)
+          center center/cover;
+      }
+
+      .songType #b9 {
+        background: url(https://i2.wp.com/www.socialnews.xyz/wp-content/uploads/2021/10/28/Saami-Saami-Song-HD-Poster-from-Pushpa-Movie-.jpg?fit=2560%2C1440&quality=80&zoom=1&ssl=1?v=1635436811)
+          center center/cover;
+      }
+
+      .songType #b10 {
+        background: url(https://www.wallsnapy.com/img_gallery/arabic-kuthu-song-images-hd-2865165.jpg)
+          center center/cover;
+      }
+
+      .songType #b11 {
+        background: url(https://images.pond5.com/pulsating-audio-equalizer-waveform-bar-footage-025130026_iconl.jpeg)
+          center center/cover;
+      }
+
+      .songType #b12 {
+        background: url(https://images.hdqwalls.com/download/boy-listening-to-music-and-watching-nature-vo-1920x1200.jpg)
+          center center/cover;
+      }
+
+      .songType #b13 {
+        background: url(https://uhdwallpapers.org/uploads/converted/18/03/11/dj-let-the-music-play-2560x1440_66494-mm-90.jpg)
+          center center/cover;
+      }
+
+      .songType #b14 {
+        background: url(https://th.bing.com/th/id/OIP.Pie4UW0mbc5Fm4qX9gt--AAAAA?rs=1&pid=ImgDetMain)
+          center center/cover;
+      }
+
+      .songType #b15 {
+        background: url(https://www.churchmotiongraphics.com/wp-content/uploads/2018/01/WorshipBackground.jpg)
+          center center/cover;
+      }
+
+      .now.playing .bar {
+        display: inline-block;
+        position: relative;
+        margin-right: 1px;
+        width: 10px;
+        height: 1px;
+        background: linear-gradient(to bottom, #ff9500, #ff5e3a);
+        animation: pulse 1s infinite;
+      }
+
+      .paused.playing .bar {
+        animation-iteration-count: 1;
+      }
+
+      @keyframes pulse {
+        0% {
+          height: 1px;
+          margin-top: 0;
+        }
+        10% {
+          height: 100px;
+          margin-top: -40px;
+        }
+        50% {
+          height: 60px;
+          margin-top: -20px;
+        }
+        60% {
+          height: 40px;
+          margin-top: -30px;
+        }
+        80% {
+          height: 60px;
+          margin-top: -60px;
+        }
+        100% {
+          height: 1px;
+          margin-top: 0;
+        }
+      }
+
+      .music-bars {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        visibility: hidden;
+      }
+
+      .active .music-bars {
+        visibility: visible;
+      }
+
+      
+/* Footer Styles */
+.footer{
+    position: relative;
+    overflow: hidden;
+}
+.footer-img{
+    box-shadow: inset  var(--c-bg-theme) 0px 15px 50px 30px;
+    background: url(../Assets/Images/crowd-people-dancing-concert_946657-1033.jpg)  no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: block;
+    width: 100%;
+    height: 600px;
+}
+.footer-info-layer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+    width: 100%;
+    background-color: rgba(1, 1, 1, 0.64);
+}
+.copyright{
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--c-white);
+}
+.reverb{
+    font-family: 'Arizonia';
+    color: var(--c-theme2);
+    font-size: 180px;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%);
+    
+}
+.nation{
+    font-family: 'Bakbak_One';
+    color: var(--c-theme);
+    font-size: 180px;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%);
+}
+:root{
+    --c-theme: #FEE9A1;
+    --c-theme-transparent:#fee9a17a;
+    --c-theme2: #FD70FD;
+    --c-bg-theme: #010101;
+    --c-white:white;
+    --c-scrollbar:#ffb6ffb5;
+    --c-bg-light:rgba(255, 255, 255, 0.1);
+}
+
+.hero_text_container{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero_text{
+    position: relative;
+}
+.hero_text span{
+    position: absolute;
+}
+.reverb{
+    font-family: 'Arizonia';
+    color: var(--c-theme2);
+    font-size: 180px;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%);
+    
+}
+.nation{
+    font-family: 'Bakbak_One';
+    color: var(--c-theme);
+    font-size: 180px;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.echo{
+    position: absolute;
+
+    font-family: 'Audiowide';
+    color: var(--c-white);
+    font-size: 40px;
+    top: 240px;
+    left: 50%;
+    width: 500px;
+    transform: translate(-50%);
+}
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navBar">
+        <img
+          src="./Assets/Images/logoReverbeNation.png"
+          class="navImage"
+        />
+        <div class="container">
+          <div class="col-auto col-sm-8 col-md-6 mx-auto ">
+              <ul class="nav_list" style="display: flex; gap:30px; ">
+                  <li class="nav_items"><a href="music2.html" style="text-decoration: none; color:white; font-weight: bold; font-size: x-large;">MUSIC</a></li>
+                  <li class="nav_items"><a href="shows.html" style="text-decoration: none; color:white; font-weight: bold; font-size: x-large;">SHOWS</a></li>
+                  <li class="nav_items nav_active"><a href="index.html" style="text-decoration: none ; color:white; font-weight: bold; font-size: x-large;">HOME</a></li>
+                  <li class="nav_items"><a href="about.html" style="text-decoration: none; color:white; font-weight: bold; font-size: x-large;">ABOUT</a></li>
+                  <li class="nav_items"><a href="" style="text-decoration: none; color:white; font-weight: bold; font-size: x-large;">MERCH</a></li>
+              </ul>
+          </div>
+      </div>
+        <div class="btn">Get Unlimited Downloads</div>
+      </nav>
+    </header>
+
+    <div class="des">
+      <h1>Unlimited Royality-Free Music</h1>
+      <h3>
+        Amplify your projects with expertly composed tracks across all moods and
+        genres
+      </h3>
+      <div class="btn2"><a href="./MusicList.html">Start Listening</a></div>
+    </div>
+
+    <div class="songType">
+      <div class="d1" id="b1" onclick="clic('1')">
+        <audio src="./Assets/music/Omaahi.mp3" id="1"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+      <div class="d1" id="b2" onclick="clic('2')">
+        <audio src="./Assets/music/guitar.mp3" id="2"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+      <div class="d1" id="b3" onclick="clic('3')">
+        <audio src="./Assets/music/Fakira(PagalWorld).mp3" id="3"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+    </div>
+    <div class="songType">
+      <div class="d1" id="b4" onclick="clic('4')">
+        <audio src="./Assets/music/Jab-Saiyaan(PagalWorld).mp3" id="4"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+      <div class="d1" id="b5" onclick="clic('5')">
+        <audio src="./Assets/music/Badshah---Sajna(PagalWorld).mp3" id="5"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+      <div class="d1" id="b6" onclick="clic('6')">
+        <audio src="./Assets/music/Chhor-Denge(PagalWorld).mp3" id="6"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+    </div>
+    <div class="songType">
+      <div class="d1" id="b7" onclick="clic('7')">
+        <audio src="./Assets/music/Socha-Nahi-Tha(PagalWorld).mp3" id="7"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+      <div class="d1" id="b8" onclick="clic('8')">
+        <audio src="./Assets/music/Maahi (From RAAZ - The Mystery Continues).mp3" id="8"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+      <div class="d1" id="b9" onclick="clic('9')">
+        <audio src="./Assets/music/Taara-Tuttya(PagalWorldl).mp3" id="9"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+    </div>
+    <div class="songType">
+      <div class="d1" id="b10" onclick="clic('10')">
+        <audio src="./Assets/music/Main-Banda-Sidha-Na-Sadha(PagalWorldl).mp3" id="10"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+      <div class="d1" id="b11" onclick="clic('11')">
+        <audio src="./Assets/music/Sar-Ko-Jhuka-Ke-Aaya-Main-Tere-Samne(PagalWorldl).mp3" id="11"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+      <div class="d1" id="b12" onclick="clic('12')">
+        <audio src="./Assets/music/Dil-Tera-Ho-Gaya(PagalWorldl).mp3" id="12"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+    </div>
+    <div class="songType">
+      <div class="d1" id="b13" onclick="clic('13')">
+        <audio src="./Assets/music/Kudiye-Ni-Teri-Vibe-(Selfiee)(PagalWorldl).mp3" id="13"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+      <div class="d1" id="b14" onclick="clic('14')">
+        <audio src="./Assets/music/O-Na-Chute-Na-Ye-Roohdaariyan(PagalWorldl).mp3" id="14"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+      <div class="d1" id="b15" onclick="clic('15')">
+        <audio src="./Assets/music/Oh-Teri-Yaad-Aati-Hai(PagalWorldl).mp3" id="15"></audio>
+        <div class="music-bars now playing">
+          <span class="bar n1"></span>
+          <span class="bar n2"></span>
+          <span class="bar n3"></span>
+          <span class="bar n4"></span>
+          <span class="bar n5"></span>
+          <span class="bar n6"></span>
+        </div>
+      </div>
+    </div>
+
+         <!-- Footer Section -->
+         <section class="footer">
+          <div class="footer-img">
+          </div>
+          <div class="footer-info-layer">
+              <div class="hero_text_container">
+                  <div class="hero_text">
+                      <span class="nation"><i>NATION</i></span>
+                      <span class="reverb"><i>Reverb</i></span>
+      
+                      <p class="echo">Echoes of the Future</p>
+                  </div>
+              </div>
+              <p class="copyright Bakbak_One ">Copyright Reverb NATION, All right Reserverd.</p>
+          </div>
+        </section>
+    
+
+    <script>
+      function clic(x) {
+        const div = document.getElementById("b" + x);
+        div.classList.toggle("active");
+
+        const audio = document.getElementById(x);
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+    </script>
+  </body>
+</html>
