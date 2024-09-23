@@ -1,128 +1,268 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reverb Nation</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="Styles/index.css" rel="stylesheet">
-    <link href="./Styles/music.css" rel="stylesheet">
     <style>
-              .shows_section {
-            padding: 50px 0;
-            background-color: #f8f9fa;
+      /* Base Styles */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin-top: 50px;
+      }
+
+      #showContent {
+        text-align: center;
+      }
+
+      /* Song Image Styles */
+      #showImage {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      #showImage:hover {
+        transform: scale(1.05);
+      }
+
+      /* Song Title Styles */
+      #showTitle {
+        font-size: 2.5rem;
+        margin: 20px 0;
+        color: #1c1c1c;
+        font-weight: 600;
+      }
+
+      /* Video Player Styles */
+      #showVideo {
+        margin-top: 30px;
+        width: 100%;
+        max-width: 850px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      /* Hover effect for video controls (similar to YouTube) */
+      video::-webkit-media-controls {
+        display: none;
+      }
+
+      video:hover::-webkit-media-controls {
+        display: block;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        #showTitle {
+          font-size: 1.8rem;
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
+        #showVideo {
+          max-width: 100%;
         }
+      }
+      .nav_list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
 
-        .show-item {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .nav_list li {
+        color: var(--c-theme);
+        font-family: "Ledger", "sans-serif";
+      }
+      ul li a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .nav_active {
+        font-size: 25px;
+        color: var(--c-theme2) !important;
+      }
+      @import url("font.css");
 
-        .show-item h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
+      :root {
+        --c-theme: #fee9a1;
+        --c-theme-transparent: #fee9a17a;
+        --c-theme2: #fd70fd;
+        --c-bg-theme: #010101;
+        --c-white: white;
+        --c-scrollbar: #ffb6ffb5;
+        --c-bg-light: rgba(255, 255, 255, 0.1);
+      }
 
-        .show-item p {
-            font-size: 16px;
-            color: #666;
-        }
+      body {
+        background-color: var(--c-bg-theme);
+      }
+      .cursor-pointer {
+        cursor: pointer;
+        user-select: none;
+      }
+      .center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .light_bg {
+        background-color: var(--c-bg-light);
+      }
+      .section-padding {
+        padding: 40px 0px;
+      }
+      .section-heading {
+        font-family: "Bakbak_One";
+        color: var(--c-theme);
+        font-size: 50px;
+      }
+      .heading-half {
+        color: var(--c-theme2);
+      }
+      .footer {
+        position: relative;
+        overflow: hidden;
+      }
+      .footer-img {
+        box-shadow: inset var(--c-bg-theme) 0px 15px 50px 30px;
 
-        .btn-buy {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #f0a500;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-        }
+        background: url(../Assets/Images/crowd-people-dancing-concert_946657-1033.jpg)
+          no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: block;
+        width: 100%;
+        height: 600px;
+      }
+      .footer-info-layer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
+        background-color: rgba(1, 1, 1, 0.64);
+      }
+      .copyright {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--c-white);
+      }
 
-        .btn-buy:hover {
-            background-color: #e58b00;
-        }
+      .section-container {
+        background: linear-gradient(to bottom, #002000, #004400);
+        padding: 20px;
+        height: 100vh;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 50px;
+        background-color: #707070;
+        border-radius: 30px;
+      }
+
+      .grid-item {
+        background-color: #200000;
+        color: #d7b4a4;
+        text-align: center;
+        padding: 40px 0;
+        border-radius: 15px;
+        font-size: 20px;
+      }
+
+      .section-container::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100px;
+        background: #707070;
+        border-bottom-right-radius: 90%;
+        position: relative;
+        bottom: 0;
+        top: -25px;
+      }
     </style>
-</head>
-
-<body>
-
-    <!-- Nav Bar -->
-    <nav class="nav_bar py-2 ">
-        <div class="container">
-            <div class="col-auto col-sm-8 col-md-6 mx-auto ">
-                <ul class="nav_list">
-                    <li class="nav_items"><a href="music2.html">MUSIC</a></li>
-                    <li class="nav_items nav_active"><a href="">SHOWS</a></li>
-                    <li class="nav_items"><a href="index.html">HOME</a></li>
-                    <li class="nav_items"><a href="about.html">ABOUT</a></li>
-                    <li class="nav_items"><a href="">MERCH</a></li>
-                </ul>
-            </div>
+  </head>
+  <body>
+    <nav class="nav_bar py-2">
+      <div class="container" style="background-color: #010101">
+        <div class="col-auto col-sm-8 col-md-6 mx-auto">
+          <ul class="nav_list">
+            <li class="nav_items nav_active"><a href="music.html">MUSIC</a></li>
+            <li class="nav_items"><a href="shows2.html">SHOWS</a></li>
+            <li class="nav_items"><a href="index.html">HOME</a></li>
+            <li class="nav_items"><a href="about.html">ABOUT</a></li>
+            <li class="nav_items"><a href="">MERCH</a></li>
+          </ul>
         </div>
+      </div>
     </nav>
 
-        <!-- Shows Section -->
-        <section class="shows_section">
-          <div class="container">
-              <div class="section-header">
-                  <h2>Upcoming Shows</h2>
-                  <p>Catch us live in a city near you!</p>
-              </div>
-  
-              <div class="show-item">
-                  <h3>August 25, 2024 - Rock City, NY</h3>
-                  <p>Venue: Madison Square Garden, New York City</p>
-                  <p>Special Guests: The Electric Vibe</p>
-                  <a href="#" class="btn-buy">Buy Tickets</a>
-              </div>
-  
-              <div class="show-item">
-                  <h3>September 5, 2024 - Festival of Beats, LA</h3>
-                  <p>Venue: Hollywood Bowl, Los Angeles</p>
-                  <a href="#" class="btn-buy">Buy Tickets</a>
-              </div>
-  
-              <!-- Add more shows as needed -->
-  
-          </div>
-      </section>
+    <div class="container">
+      <div id="showContent">
+        <!-- <img id="showImage" src="" alt="Song Image"> -->
+        <h1 id="showTitle"></h1>
+        <video id="showVideo" controls>
+          <source id="videoSource" src="" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
 
-
-
-
-    <!-- Footer Section -->
+    <!-- footer  -->
     <section class="footer">
-        <div class="footer-img"></div>
-        <div class="footer-info-layer">
-            <div class="hero_text_container">
-                <div class="hero_text">
-                    <span class="nation">NATION</span>
-                    <span class="reverb">Reverb</span>
+      <div class="footer-img"></div>
+      <div class="footer-info-layer">
+        <div class="hero_text_container">
+          <div class="hero_text">
+            <!-- <span class="nation">NATION</span>
+                    <span class="reverb">Reverb</span> -->
 
-                    <p class="echo">Echoes of the Future</p>
-                </div>
-            </div>
-            <p class="copyright Bakbak_One ">Copyright Reverb NATION, All right Reserved.</p>
+            <!-- <p class="echo">Echoes of the Future</p> -->
+          </div>
         </div>
+        <p class="copyright Bakbak_One">
+          Copyright Reverb NATION, All right Reserverd.
+        </p>
+      </div>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
-    <script src="Scripts/index.js"></script>
-</body>
+    <script>
+      // Get the query string from the URL
+      const params = new URLSearchParams(window.location.search);
 
+      // Extract the song data
+      const songName = params.get("name");
+      // const songImg = params.get('img');
+      const songVideo = params.get("video");
+
+      // Set the content dynamically
+      document.getElementById("showTitle").innerText = songName;
+      // document.getElementById('showImage').src = songImg;
+      document.getElementById("videoSource").src = songVideo;
+      document.getElementById("showVideo").load(); // Reload the video with the new source
+    </script>
+  </body>
 </html>

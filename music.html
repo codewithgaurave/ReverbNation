@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Music App</title>
+    <title>Reverb Nation</title>
     <style>
       @import url("font.css");
       body {
@@ -67,9 +67,9 @@
         font-weight: bold;
       }
 
-      .btn2 a{
+      .btn2 a {
         text-decoration: none;
-        color:#010101;
+        color: #010101;
       }
 
       .songType {
@@ -77,7 +77,7 @@
         width: 100%;
         display: flex;
         margin-top: 10px;
-        margin-bottom:10px;
+        margin-bottom: 10px;
       }
 
       .songType .d1 {
@@ -101,12 +101,12 @@
       }
 
       .songType #b3 {
-        background: url(https://stringjoy.com/wp-content/uploads/2016/10/IMG_5126-1024x683.png)
+        background: url(https://th.bing.com/th/id/OIP.QiNisisGFwo-jQmguPgh_QHaE8?rs=1&pid=ImgDetMain)
           center center/cover;
       }
       .songType #b4 {
-        background: url(https://wallpapercave.com/wp/0l0kzYB.jpg)
-          center center/cover;
+        background: url(https://wallpapercave.com/wp/0l0kzYB.jpg) center
+          center/cover;
       }
 
       .songType #b5 {
@@ -125,8 +125,8 @@
       }
 
       .songType #b8 {
-        background: url(https://wallpapercave.com/wp/wp8130764.jpg)
-          center center/cover;
+        background: url(https://wallpapercave.com/wp/wp8130764.jpg) center
+          center/cover;
       }
 
       .songType #b9 {
@@ -218,128 +218,182 @@
         visibility: visible;
       }
 
-      
-/* Footer Styles */
-.footer{
-    position: relative;
-    overflow: hidden;
-}
-.footer-img{
-    box-shadow: inset  var(--c-bg-theme) 0px 15px 50px 30px;
-    background: url(../Assets/Images/crowd-people-dancing-concert_946657-1033.jpg)  no-repeat;
-    background-size: cover;
-    background-position: center;
-    display: block;
-    width: 100%;
-    height: 600px;
-}
-.footer-info-layer{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    height: 100%;
-    width: 100%;
-    background-color: rgba(1, 1, 1, 0.64);
-}
-.copyright{
-    position: absolute;
-    bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--c-white);
-}
-.reverb{
-    font-family: 'Arizonia';
-    color: var(--c-theme2);
-    font-size: 180px;
-    top: -10px;
-    left: 50%;
-    transform: translate(-50%);
-    
-}
-.nation{
-    font-family: 'Bakbak_One';
-    color: var(--c-theme);
-    font-size: 180px;
-    top: 50px;
-    left: 50%;
-    transform: translate(-50%);
-}
-:root{
-    --c-theme: #FEE9A1;
-    --c-theme-transparent:#fee9a17a;
-    --c-theme2: #FD70FD;
-    --c-bg-theme: #010101;
-    --c-white:white;
-    --c-scrollbar:#ffb6ffb5;
-    --c-bg-light:rgba(255, 255, 255, 0.1);
-}
+      .inactive .music-bars {
+        visibility: hidden;
+      }
 
-.hero_text_container{
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.hero_text{
-    position: relative;
-}
-.hero_text span{
-    position: absolute;
-}
-.reverb{
-    font-family: 'Arizonia';
-    color: var(--c-theme2);
-    font-size: 180px;
-    top: -10px;
-    left: 50%;
-    transform: translate(-50%);
-    
-}
-.nation{
-    font-family: 'Bakbak_One';
-    color: var(--c-theme);
-    font-size: 180px;
-    top: 50px;
-    left: 50%;
-    transform: translate(-50%);
-}
-.echo{
-    position: absolute;
+      /* Footer Styles */
+      .footer {
+        position: relative;
+        overflow: hidden;
+      }
+      .footer-img {
+        box-shadow: inset var(--c-bg-theme) 0px 15px 50px 30px;
+        background: url(../Assets/Images/crowd-people-dancing-concert_946657-1033.jpg)
+          no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: block;
+        width: 100%;
+        height: 600px;
+      }
+      .footer-info-layer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
+        background-color: rgba(1, 1, 1, 0.64);
+      }
+      .copyright {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: var(--c-white);
+      }
+      .reverb {
+        font-family: "Arizonia";
+        color: var(--c-theme2);
+        font-size: 180px;
+        top: -10px;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      .nation {
+        font-family: "Bakbak_One";
+        color: var(--c-theme);
+        font-size: 180px;
+        top: 50px;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      :root {
+        --c-theme: #fee9a1;
+        --c-theme-transparent: #fee9a17a;
+        --c-theme2: #fd70fd;
+        --c-bg-theme: #010101;
+        --c-white: white;
+        --c-scrollbar: #ffb6ffb5;
+        --c-bg-light: rgba(255, 255, 255, 0.1);
+      }
 
-    font-family: 'Audiowide';
-    color: var(--c-white);
-    font-size: 40px;
-    top: 240px;
-    left: 50%;
-    width: 500px;
-    transform: translate(-50%);
-}
+      .hero_text_container {
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hero_text {
+        position: relative;
+      }
+      .hero_text span {
+        position: absolute;
+      }
+      .reverb {
+        font-family: "Arizonia";
+        color: var(--c-theme2);
+        font-size: 180px;
+        top: -10px;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      .nation {
+        font-family: "Bakbak_One";
+        color: var(--c-theme);
+        font-size: 180px;
+        top: 50px;
+        left: 50%;
+        transform: translate(-50%);
+      }
+      .echo {
+        position: absolute;
+
+        font-family: "Audiowide";
+        color: var(--c-white);
+        font-size: 40px;
+        top: 240px;
+        left: 50%;
+        width: 500px;
+        transform: translate(-50%);
+      }
     </style>
   </head>
   <body>
     <header>
       <nav class="navBar">
-        <img
-          src="./Assets/Images/logoReverbeNation.png"
-          class="navImage"
-        />
+        <img src="./Assets/Images/logoReverbeNation.png" class="navImage" />
         <div class="container">
-          <div class="col-auto col-sm-8 col-md-6 mx-auto ">
-              <ul class="nav_list" style="display: flex; gap:30px; ">
-                  <li class="nav_items"><a href="music2.html" style="text-decoration: none; color:white; font-weight: bold; font-size: x-large;">MUSIC</a></li>
-                  <li class="nav_items"><a href="shows.html" style="text-decoration: none; color:white; font-weight: bold; font-size: x-large;">SHOWS</a></li>
-                  <li class="nav_items nav_active"><a href="index.html" style="text-decoration: none ; color:white; font-weight: bold; font-size: x-large;">HOME</a></li>
-                  <li class="nav_items"><a href="about.html" style="text-decoration: none; color:white; font-weight: bold; font-size: x-large;">ABOUT</a></li>
-                  <li class="nav_items"><a href="" style="text-decoration: none; color:white; font-weight: bold; font-size: x-large;">MERCH</a></li>
-              </ul>
+          <div class="col-auto col-sm-8 col-md-6 mx-auto">
+            <ul class="nav_list" style="display: flex; gap: 30px">
+              <li class="nav_items">
+                <a
+                  href="music2.html"
+                  style="
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    font-size: x-large;
+                  "
+                  >MUSIC</a
+                >
+              </li>
+              <li class="nav_items">
+                <a
+                  href="shows2.html"
+                  style="
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    font-size: x-large;
+                  "
+                  >SHOWS</a
+                >
+              </li>
+              <li class="nav_items nav_active">
+                <a
+                  href="index.html"
+                  style="
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    font-size: x-large;
+                  "
+                  >HOME</a
+                >
+              </li>
+              <li class="nav_items">
+                <a
+                  href="about.html"
+                  style="
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    font-size: x-large;
+                  "
+                  >ABOUT</a
+                >
+              </li>
+              <li class="nav_items">
+                <a
+                  href=""
+                  style="
+                    text-decoration: none;
+                    color: white;
+                    font-weight: bold;
+                    font-size: x-large;
+                  "
+                  >MERCH</a
+                >
+              </li>
+            </ul>
           </div>
-      </div>
-        <div class="btn">Get Unlimited Downloads</div>
+        </div>
+        <a href="songDownload.html"><div class="btn">Get Unlimited Downloads</div></a>
       </nav>
     </header>
 
@@ -400,7 +454,10 @@
         </div>
       </div>
       <div class="d1" id="b5" onclick="clic('5')">
-        <audio src="./Assets/music/Badshah---Sajna(PagalWorld).mp3" id="5"></audio>
+        <audio
+          src="./Assets/music/Badshah---Sajna(PagalWorld).mp3"
+          id="5"
+        ></audio>
         <div class="music-bars now playing">
           <span class="bar n1"></span>
           <span class="bar n2"></span>
@@ -424,7 +481,10 @@
     </div>
     <div class="songType">
       <div class="d1" id="b7" onclick="clic('7')">
-        <audio src="./Assets/music/Socha-Nahi-Tha(PagalWorld).mp3" id="7"></audio>
+        <audio
+          src="./Assets/music/Socha-Nahi-Tha(PagalWorld).mp3"
+          id="7"
+        ></audio>
         <div class="music-bars now playing">
           <span class="bar n1"></span>
           <span class="bar n2"></span>
@@ -435,7 +495,10 @@
         </div>
       </div>
       <div class="d1" id="b8" onclick="clic('8')">
-        <audio src="./Assets/music/Maahi (From RAAZ - The Mystery Continues).mp3" id="8"></audio>
+        <audio
+          src="./Assets/music/Maahi (From RAAZ - The Mystery Continues).mp3"
+          id="8"
+        ></audio>
         <div class="music-bars now playing">
           <span class="bar n1"></span>
           <span class="bar n2"></span>
@@ -446,7 +509,10 @@
         </div>
       </div>
       <div class="d1" id="b9" onclick="clic('9')">
-        <audio src="./Assets/music/Taara-Tuttya(PagalWorldl).mp3" id="9"></audio>
+        <audio
+          src="./Assets/music/Taara-Tuttya(PagalWorldl).mp3"
+          id="9"
+        ></audio>
         <div class="music-bars now playing">
           <span class="bar n1"></span>
           <span class="bar n2"></span>
@@ -459,7 +525,10 @@
     </div>
     <div class="songType">
       <div class="d1" id="b10" onclick="clic('10')">
-        <audio src="./Assets/music/Main-Banda-Sidha-Na-Sadha(PagalWorldl).mp3" id="10"></audio>
+        <audio
+          src="./Assets/music/Main-Banda-Sidha-Na-Sadha(PagalWorldl).mp3"
+          id="10"
+        ></audio>
         <div class="music-bars now playing">
           <span class="bar n1"></span>
           <span class="bar n2"></span>
@@ -470,7 +539,10 @@
         </div>
       </div>
       <div class="d1" id="b11" onclick="clic('11')">
-        <audio src="./Assets/music/Sar-Ko-Jhuka-Ke-Aaya-Main-Tere-Samne(PagalWorldl).mp3" id="11"></audio>
+        <audio
+          src="./Assets/music/Sar-Ko-Jhuka-Ke-Aaya-Main-Tere-Samne(PagalWorldl).mp3"
+          id="11"
+        ></audio>
         <div class="music-bars now playing">
           <span class="bar n1"></span>
           <span class="bar n2"></span>
@@ -481,7 +553,10 @@
         </div>
       </div>
       <div class="d1" id="b12" onclick="clic('12')">
-        <audio src="./Assets/music/Dil-Tera-Ho-Gaya(PagalWorldl).mp3" id="12"></audio>
+        <audio
+          src="./Assets/music/Dil-Tera-Ho-Gaya(PagalWorldl).mp3"
+          id="12"
+        ></audio>
         <div class="music-bars now playing">
           <span class="bar n1"></span>
           <span class="bar n2"></span>
@@ -494,7 +569,10 @@
     </div>
     <div class="songType">
       <div class="d1" id="b13" onclick="clic('13')">
-        <audio src="./Assets/music/Kudiye-Ni-Teri-Vibe-(Selfiee)(PagalWorldl).mp3" id="13"></audio>
+        <audio
+          src="./Assets/music/Kudiye-Ni-Teri-Vibe-(Selfiee)(PagalWorldl).mp3"
+          id="13"
+        ></audio>
         <div class="music-bars now playing">
           <span class="bar n1"></span>
           <span class="bar n2"></span>
@@ -505,7 +583,10 @@
         </div>
       </div>
       <div class="d1" id="b14" onclick="clic('14')">
-        <audio src="./Assets/music/O-Na-Chute-Na-Ye-Roohdaariyan(PagalWorldl).mp3" id="14"></audio>
+        <audio
+          src="./Assets/music/O-Na-Chute-Na-Ye-Roohdaariyan(PagalWorldl).mp3"
+          id="14"
+        ></audio>
         <div class="music-bars now playing">
           <span class="bar n1"></span>
           <span class="bar n2"></span>
@@ -516,7 +597,10 @@
         </div>
       </div>
       <div class="d1" id="b15" onclick="clic('15')">
-        <audio src="./Assets/music/Oh-Teri-Yaad-Aati-Hai(PagalWorldl).mp3" id="15"></audio>
+        <audio
+          src="./Assets/music/Oh-Teri-Yaad-Aati-Hai(PagalWorldl).mp3"
+          id="15"
+        ></audio>
         <div class="music-bars now playing">
           <span class="bar n1"></span>
           <span class="bar n2"></span>
@@ -528,34 +612,49 @@
       </div>
     </div>
 
-         <!-- Footer Section -->
-         <section class="footer">
-          <div class="footer-img">
+    <!-- Footer Section -->
+    <section class="footer">
+      <div class="footer-img"></div>
+      <div class="footer-info-layer">
+        <div class="hero_text_container">
+          <div class="hero_text">
+            <span class="nation"><i>NATION</i></span>
+            <span class="reverb"><i>Reverb</i></span>
+
+            <p class="echo">Echoes of the Future</p>
           </div>
-          <div class="footer-info-layer">
-              <div class="hero_text_container">
-                  <div class="hero_text">
-                      <span class="nation"><i>NATION</i></span>
-                      <span class="reverb"><i>Reverb</i></span>
-      
-                      <p class="echo">Echoes of the Future</p>
-                  </div>
-              </div>
-              <p class="copyright Bakbak_One ">Copyright Reverb NATION, All right Reserverd.</p>
-          </div>
-        </section>
-    
+        </div>
+        <p class="copyright Bakbak_One">
+          Copyright Reverb NATION, All right Reserverd.
+        </p>
+      </div>
+    </section>
 
     <script>
+      let currentAudio = null;
+
       function clic(x) {
         const div = document.getElementById("b" + x);
-        div.classList.toggle("active");
-
         const audio = document.getElementById(x);
+
+        if (currentAudio && currentAudio !== audio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+          document
+            .getElementById("b" + currentAudio.id)
+            .classList.remove("active");
+        }
+
         if (audio.paused) {
           audio.play();
+          div.classList.add("active"); 
+          div.classList.remove("inactive");
+          currentAudio = audio;
         } else {
+          div.classList.add("inactive"); 
+          div.classList.remove("active"); 
           audio.pause();
+          currentAudio = null; 
         }
       }
     </script>

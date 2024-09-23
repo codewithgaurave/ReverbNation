@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverb Nation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      .song-container {
+        padding: 20px;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      h1 {
+        text-align: center;
+        color: #ffffff;
+      }
+
+      .song-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .song-item {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        width: 150px;
+        text-align: center;
+        transition: transform 0.2s;
+      }
+
+      .song-item:hover {
+        transform: scale(1.05);
+      }
+
+      .song-item img {
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      .song-title {
+        font-size: 14px;
+        margin: 10px 0;
+        color: #333;
+      }
+
+      .song-category,
+      .song-duration {
+        font-size: 12px;
+        color: #666;
+      }
+
+      .play-btn {
+        background-color:darkmagenta;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .play-btn:hover {
+        background-color: darkmagenta;
+        transition: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      }
+
+      .audio-player {
+        margin: 30px auto;
+        text-align: center;
+      }
+    </style>
+    <link href="Styles/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="nav_bar py-2" style="width: 60%; margin-left: 300px">
+      <div class="container">
+        <div class="col-auto col-sm-8 col-md-6 mx-auto">
+          <ul class="nav_list">
+            <li class="nav_items"><a href="music2.html">MUSIC</a></li>
+            <li class="nav_items"><a href="shows2.html">SHOWS</a></li>
+            <li class="nav_items nav_active"><a href="">HOME</a></li>
+            <li class="nav_items"><a href="about.html">ABOUT</a></li>
+            <li class="nav_items"><a href="">MERCH</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="song-container">
+      <h1>Stree 2 Songs</h1>
+      <div id="song-list" class="song-list"></div>
+    </div>
+
+    <div class="audio-player">
+      <h2 id="current-song-title">Select a song to play</h2>
+      <audio id="audio-player" controls>
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <!-- Footer Section -->
+    <section class="footer">
+      <div class="footer-img"></div>
+      <div class="footer-info-layer">
+        <div class="hero_text_container">
+          <div class="hero_text">
+            <span class="nation"><i>NATION</i></span>
+            <span class="reverb"><i>Reverb</i></span>
+
+            <p class="echo">Echoes of the Future</p>
+          </div>
+        </div>
+        <p class="copyright Bakbak_One">
+          Copyright Reverb NATION, All right Reserverd.
+        </p>
+      </div>
+    </section>
+
+    <script>
+      const songList = document.getElementById("song-list");
+      const audioPlayer = document.getElementById("audio-player");
+      const currentSongTitle = document.getElementById("current-song-title");
+      async function fetchSongs() {
+        try {
+          const response = await fetch("songDownload.json");
+          const songs = await response.json();
+          renderSongs(songs);
+        } catch (error) {
+          console.error("Error fetching songs:", error);
+        }
+      }
+
+      function renderSongs(songs) {
+        songs.forEach((song) => {
+          const songItem = document.createElement("div");
+          songItem.classList.add("song-item");
+
+          const thumbnail = document.createElement("img");
+          thumbnail.src = song.thumbnail;
+          songItem.appendChild(thumbnail);
+
+          const songTitle = document.createElement("div");
+          songTitle.classList.add("song-title");
+          songTitle.innerText = song.title;
+          songItem.appendChild(songTitle);
+
+          const songCategory = document.createElement("div");
+          songCategory.classList.add("song-category");
+          songCategory.innerText = song.Category;
+          songItem.appendChild(songCategory);
+
+          const songDuration = document.createElement("div");
+          songDuration.classList.add("song-duration");
+          songDuration.innerText = `Duration: ${song.Duration}`;
+          songItem.appendChild(songDuration);
+
+          const playBtn = document.createElement("button");
+          playBtn.classList.add("play-btn");
+          playBtn.innerText = "Play";
+          playBtn.addEventListener("click", () => playSong(song));
+          songItem.appendChild(playBtn);
+
+          songList.appendChild(songItem);
+        });
+      }
+
+      function playSong(song) {
+        audioPlayer.src = song.song;
+        currentSongTitle.innerText = `Now Playing: ${song.title}`;
+        audioPlayer.play();
+      }
+
+      fetchSongs();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Anushka Yadav",
+        "artist": "Pritam, Arijit Singh",
+        "imgSrc": "./Assets/Images/OMaahi.jpeg",
+        "songSrc": "./Assets/Music/anushkaYadav/anu.mpeg",
+        "duration": "4:30"
+    },
+    {
+        "title": "Cheshtha Dance",
+        "artist": "Amrinder Gill, Sumitra Iyyer",
+        "imgSrc": "./Assets/Images/mt3.png",
+        "songSrc": "./Assets/music/cheshtaDance/chestha.mpeg",
+        "duration": "4:10"
+    },
+    {
+        "title": "Lavi and Anushka",
+        "artist": "Sachet-Parampara",
+        "imgSrc": "./Assets/Images/mt4.png",
+        "audio": "./Assets/music/laviAndAnushkaGroupDance/lavi.mp4",
+        "duration": "4:50"
+    },
+    {
+        "title": "Muskan And Anushka",
+        "artist": "Sanam Puri, Neeti Mohan",
+        "imgSrc": "./Assets/Images/crowd-people-dancing-concert_946657-1033.jpg",
+        "audio": "./Assets/music/muskanAndAnushkaDance/muskanandanushka.mpeg",
+        "duration": "5:10"
+    },
+    {
+        "title": "Rajiya Falak",
+        "artist": "Shreya Ghosal",
+        "imgSrc": "./Assets/Images/hit1.jpg",
+        "audio": "./Assets/music/rajiyaFalak/rajiyaFalak.mp4",
+        "duration": "6:00"
+    }
+
+]
